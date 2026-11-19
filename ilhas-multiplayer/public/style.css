@@ -30,3 +30,20 @@ body{background:#e8f2ee;color:#1b3440;font-family:system-ui,-apple-system,Segoe 
 @media(max-width:950px){.layout{grid-template-columns:minmax(0,1fr) 360px}.layout>aside{position:static;max-height:none}}
 @media(max-width:730px){.layout{grid-template-columns:1fr}.layout>aside{order:2}.mainTabs{grid-template-columns:repeat(4,minmax(0,1fr))}.mainTabs button{font-size:11px;text-align:center;padding:9px 2px}}
 @media(max-width:440px){.mainTabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* V10: histórico no painel direito, sem invadir a área do mapa */
+[hidden]{display:none!important}
+.layout{grid-template-columns:minmax(0,1fr) minmax(380px,450px)}
+.layout>aside{position:static;max-height:none;overflow:visible}
+.layout>aside .history{margin-top:18px;padding:13px;background:#f5fbfa}
+#actionFeedback{padding:14px;margin:10px 0;border-radius:10px;border:2px solid #9ac9bc;background:#e4f5ee;font-size:15px;font-weight:750;line-height:1.5}
+#actionFeedback.failure{background:#fff0eb;border-color:#dba297;color:#8b2920}
+#actionFeedback.success{background:#e4f6e7;border-color:#83c48f;color:#205b34}
+#log{max-height:420px}
+#log p{line-height:1.5}
+#log p.eventSuccess{border-left-color:#37a35d;background:#e7f8ed}
+#log p.eventFailure{border-left-color:#d77969;background:#fff0eb}
+#log p.eventMine{font-weight:650}
+@media(max-width:900px){.layout{grid-template-columns:minmax(0,1fr) 355px}}
+@media(max-width:730px){.layout{grid-template-columns:1fr}}
+
