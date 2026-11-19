@@ -1,4 +1,4 @@
-}
+
 function canReach(r,p,target){return !!route(r,p,target)}
 const costs={tanque:3,aviao:4,computador:2,plantacao:2,barco:2,ponte:2,barcoMedio:4,barcoGrande:6,artilharia:3,blindagem:3,medicina:2,logistica:2,radar:2,fortificacao:3,satelite:5,engenharia:2,armaFogo:2,espada:1,armasAvancadas:4};
 function roll(){return faces[crypto.randomInt(6)]}function islands(){return shapes.map(([shape,x,y,size],id)=>({id,shape,x,y,size,owner:null,structures:[]}))}function send(ws,data){if(ws?.readyState===WebSocket.OPEN)ws.send(JSON.stringify(data))}function err(ws,message){send(ws,{type:'error',message})}function code(){let c;do{c=crypto.randomBytes(4).toString('hex').slice(0,6).toUpperCase()}while(rooms.has(c));return c}let nextId=1;
