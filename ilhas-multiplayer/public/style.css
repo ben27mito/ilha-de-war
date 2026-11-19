@@ -8,3 +8,25 @@ select{display:block;width:100%;padding:10px;margin:8px 0 14px;border:1px solid 
 
 /* V8: identidade visual, mapa maior, painel lateral e histórico inferior */
 body{background:#e8f2ee;color:#1b3440;font-family:system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:1540px;padding:18px 22px}header{background:linear-gradient(120deg,#10394a,#167a80);color:#fff;border-radius:18px;padding:26px 16px;margin:0 0 18px;box-shadow:0 12px 30px #164b5a24}header h1{font-size:clamp(26px,4vw,46px);letter-spacing:3px}header p{color:#c8eceb;margin-bottom:0}.eyebrow{font-size:11px;letter-spacing:3px;color:#a8e2d1;margin-bottom:8px}.panel{border:1px solid #b7d4d1;border-radius:13px;box-shadow:0 5px 20px #214e5310}#entry{max-width:680px}.welcome{background:#eaf7f0;border-radius:12px;padding:14px 18px;margin-bottom:18px}.welcome h2{margin:0 0 6px}.welcome p{margin:0;color:#496a67}.layout{grid-template-columns:minmax(0,1fr) 340px;gap:14px;align-items:start}.mapColumn{min-width:0}.paper{border:2px solid #7fb4b3;border-radius:14px;background:#d6edf1}#mapSvg{background:#cbeaf1}#mapViewport{background:#cbeaf1}button{background:#116f76;border-radius:8px;font-weight:650}button:hover{filter:brightness(1.08)}.secondary{background:#fff;color:#205b61;border-color:#8cb3b3}.startBtn{background:#eea747;color:#172b31;width:100%;font-size:17px;margin-top:15px;padding:15px}.history{margin-top:14px}.history h2{margin:0 0 6px}#log{max-height:300px}#log p{padding:10px;border-left:3px solid #4d9b91;background:#f4fbf9;margin:5px 0;border-bottom:0;border-radius:4px}.tabbar{display:flex;gap:7px;margin:12px 0}.tabbar button{flex:1;background:#e5f0ed;color:#285d62}.tabbar button.active{background:#155c69;color:#fff}.lobbyInfo{background:#eaf5f3;border-radius:9px;padding:10px;font-size:13px;line-height:1.6;margin-bottom:12px}#alliancePanel{background:#f2f9f7;padding:12px;border-radius:9px}#allyList p{padding:8px;border-bottom:1px solid #cce0dc}#quickTabs{grid-template-columns:repeat(2,minmax(0,1fr))}#quickTabs button{font-size:13px;border-radius:7px}.maptools{background:#f7fffd}.maptools span{font-weight:600;color:#32636b}@media(max-width:950px){.layout{grid-template-columns:1fr}aside{order:2}}@media(max-width:650px){main{padding:8px}.panel{padding:12px}.layout{gap:10px}header{padding:18px 10px}}
+
+/* V9 — painel de comando fixo à direita no desktop */
+[hidden]{display:none!important}
+.layout{grid-template-columns:minmax(0,1fr) minmax(365px,410px);align-items:start}
+.layout>aside{min-width:0;position:sticky;top:12px;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain}
+.mainTabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:14px 0}
+.mainTabs button{background:#eaf4f1;color:#215860;border:1px solid #c0ded8;text-align:left;font-size:14px;padding:12px 9px}
+.mainTabs button.active{background:#176e78;color:white;box-shadow:0 3px 9px #134b5525}
+.choiceGroup{display:grid;gap:8px;margin:10px 0}
+.actionChoice{display:flex;align-items:center;gap:12px;text-align:left;background:#f4faf8;color:#24454a;border:1px solid #c7dcd8;padding:12px;width:100%}
+.actionChoice.active{background:#d7efec;border:2px solid #14838b;padding:11px}
+.choiceIcon{font-size:25px;width:33px;text-align:center}.choiceInfo{display:grid;gap:3px}.choiceInfo strong{font-size:14px}.choiceInfo small{font-size:11px;color:#557278;font-weight:400}
+.actionForm{background:#f8fbfa;border:1px solid #d1e5e0;border-radius:10px;padding:12px;margin-top:12px}
+.internalAction{display:none}
+#numbers{background:#e6f4f2;border-color:#badbd4}#doAction{width:100%;font-size:15px;margin-top:10px}
+.researchCatalog h3{margin:14px 0 4px;font-size:15px}.researchCatalog .hint{text-align:left;padding:0}
+.techGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;max-height:220px;overflow-y:auto}
+.techCard{font-size:11px;text-align:left;background:#fff;color:#345d62;border:1px solid #c8deda;padding:8px}
+.techCard.active{border:2px solid #18818a;background:#e5f4f1;padding:7px}.techCard.discovered{background:#e3f4df;color:#2b6538}
+@media(max-width:950px){.layout{grid-template-columns:minmax(0,1fr) 360px}.layout>aside{position:static;max-height:none}}
+@media(max-width:730px){.layout{grid-template-columns:1fr}.layout>aside{order:2}.mainTabs{grid-template-columns:repeat(4,minmax(0,1fr))}.mainTabs button{font-size:11px;text-align:center;padding:9px 2px}}
+@media(max-width:440px){.mainTabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
